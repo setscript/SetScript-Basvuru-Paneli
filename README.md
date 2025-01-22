@@ -41,8 +41,8 @@ Discord Başvuru Paneli Botu, sunucularınızda kullanıcıların kolayca başvu
 
 1. Projeyi klonlayın:
 ```bash
-git clone https://github.com/setscript/setscript-basvuru-paneli.git
-cd discord-basvuru-paneli
+git clone https://github.com/setscript/SetScript-Basvuru-Paneli.git
+cd SetScript-Basvuru-Paneli
 ```
 
 2. Bağımlılıkları yükleyin:
@@ -63,7 +63,7 @@ node start.bat
 ## Proje Yapısı
 
 ```
-discord-basvuru-paneli/
+SetScript-Basvuru-Paneli/
 ├── commands/                 # Komut dosyaları
 │   └── basvuru-panel.js      # Başvuru paneli komutları
 ├── croxydb/                  # Veritabanı dosyaları
