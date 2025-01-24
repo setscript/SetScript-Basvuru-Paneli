@@ -4,7 +4,7 @@ Elbette! Discord başvuru paneli botu için belgeyi, proje dizinine uygun olacak
 
 # Discord Başvuru Paneli Botu
 
-![Başvuru Paneli](https://socialify.git.ci/setscript/SetScript-Desktop/image?description=1&font=Inter&forks=1&language=1&name=1&owner=1&pattern=Floating+Cogs&stargazers=1&theme=Dark)
+![Başvuru Paneli](https://socialify.git.ci/setscript/SetScript-Basvuru-Paneli/image?description=1&font=Inter&forks=1&language=1&name=1&owner=1&pattern=Floating+Cogs&stargazers=1&theme=Dark)
 
 Discord Başvuru Paneli Botu, sunucularınızda kullanıcıların kolayca başvuru yapmasını sağlayan modern bir bot çözümüdür. Bot, kullanıcı dostu tasarımı ve gelişmiş özellikleriyle sunucunuzu profesyonel hale getirir.
 
