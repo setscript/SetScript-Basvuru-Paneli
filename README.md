@@ -1,5 +1,3 @@
-Elbette! Discord başvuru paneli botu için belgeyi, proje dizinine uygun olacak şekilde düzenliyorum. İşte düzenlenmiş hali: 
-
 ---
 
 # Discord Başvuru Paneli Botu
