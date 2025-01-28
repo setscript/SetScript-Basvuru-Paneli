@@ -1,7 +1,3 @@
-Elbette! Discord başvuru paneli botu için belgeyi, proje dizinine uygun olacak şekilde düzenliyorum. İşte düzenlenmiş hali: 
-
----
-
 # Discord Başvuru Paneli Botu
 
 ![Başvuru Paneli](https://socialify.git.ci/setscript/SetScript-Basvuru-Paneli/image?description=1&font=Inter&forks=1&language=1&name=1&owner=1&pattern=Floating+Cogs&stargazers=1&theme=Dark)
