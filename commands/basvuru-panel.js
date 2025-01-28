@@ -58,7 +58,6 @@ module.exports = {
                 ephemeral: true 
             });
         }
-
         const basvuruKanal = interaction.options.getChannel('basvuru-kanal');
         const logKanal = interaction.options.getChannel('log-kanal');
         const adminRol = interaction.options.getRole('admin-rol');
@@ -107,6 +106,20 @@ module.exports = {
 client.on('interactionCreate', async interaction => {
     try {
         if (interaction.isButton() && interaction.customId === 'basvuru_yap') {
+            const database = db.get(`config_${interaction.guild.id}`);
+            if (interaction.member.roles.cache.get(database.gelistiriciRol)) return 
+                interaction.reply({ 
+                    content: 'Zaten SetScript ekibinde bulunuyorsunuz!',
+                    ephemeral: true
+                });
+            
+            const beklemede = db.get("beklemede") || [];
+            if (bekleme.includes(`${interaction.user.id}`)) return
+                interaction.reply({ 
+                    content: 'Zaten açılmış başvuru talebin var!',
+                    ephemeral: true
+                });
+            
             const modal = new ModalBuilder()
                 .setCustomId('gelistirici_basvuru')
                 .setTitle('Geliştirici Başvuru Formu');
@@ -195,6 +208,7 @@ client.on('interactionCreate', async interaction => {
 
             await ticketKanal.send({ embeds: [basvuruEmbed], components: [butonlar] });
             await interaction.reply({ content: "Başvurunuz alındı! Görüşmek için bir ticket kanalı oluşturuldu.", ephemeral: true });
+            db.push("beklemede", `${interaction.user.id}`);
         }
 
         if (
@@ -228,6 +242,7 @@ client.on('interactionCreate', async interaction => {
                 await interaction.channel.send(
                     `Tebrikler ${member}! Başvurunuz kabul edildi! 🎉`
                 );
+                db.unpush("beklemede", `${userId}`);
         
                 const logEmbed = new EmbedBuilder()
                     .setColor('Green')
@@ -249,8 +264,9 @@ client.on('interactionCreate', async interaction => {
         
                 await interaction.channel.send(
                     `${member}, üzgünüz ama başvurunuz reddedildi.`
-                );
-        
+                );             
+                db.unpush("beklemede", `${userId}`);   
+                
                 const logEmbed = new EmbedBuilder()
                     .setColor('Red')
                     .setTitle('Geliştirici Başvurusu Reddedildi')
