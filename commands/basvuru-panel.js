@@ -107,7 +107,7 @@ client.on('interactionCreate', async interaction => {
     try {
         if (interaction.isButton() && interaction.customId === 'basvuru_yap') {
             const database = db.get(`config_${interaction.guild.id}`);
-            if (interaction.member.roles.cache.get(database.gelistiriciRol)) return 
+            if (interaction.member.roles.cache.has(database.gelistiriciRol)) return 
                 interaction.reply({ 
                     content: 'Zaten SetScript ekibinde bulunuyorsunuz!',
                     ephemeral: true
